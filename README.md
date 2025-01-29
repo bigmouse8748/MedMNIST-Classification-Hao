@@ -8,7 +8,8 @@ An end-to-end pipeline for classifying medical images from the MedMNIST dataset.
 - [About](#about)
 - [Setup Instructions](#setup-instructions)
 - [Code Structure](#code-structure)
-- [Usage](#usage)
+- [Installation](#installation)
+- [Command Line Tools](#command-line-tools)
 - [Results](#results)
 - [License](#license)
 
@@ -43,10 +44,10 @@ This project processes images from the MedMNIST dataset to classify medical imag
     * ['stock_model.py'](models/stock_model.py): Load pretrained model provided by Pytorch
     * ['train.py'](models/train.py): Perform training with several selectable arguments.
 
-* ['outputs/'](outputs/): Save training outputs in sub-folders. The   name of subfolder is created by the format of {dataset}_{model_name}_{created_time}. Training configurations, training logs, and model weights are stored in this folder.
+* ['outputs/'](outputs/): Save training outputs in sub-folders. The   name of subfolder is created by the format of "{dataset}_{model_name}_{created_time}". Training configurations, training logs, and model weights are stored in this folder.
 
 * ['tests/'](tests/):
-    * [test_results/](tests/test_results/): Saving the test result of each test event. Subfolder name with the format of {dataset}_{model_name}_{Datetime} saves the test result for "single model, single dataset" test pattern. Subfolder "Group_results" saves the test results for "multi model, single dataset" test pattern. 
+    * [test_results/](tests/test_results/): Saving the test result of each test event. Subfolder name with the format of "{dataset}_{model_name}_{Datetime}" saves the test result for "single model, single dataset" test pattern. Subfolder "Group_results" saves the test results for "multi model, single dataset" test pattern. 
     * ['test.py'](tests/test.py): Perform test with several selectable arguments.
 * ['utils/'](utils/utils.py): helper functions.
 
@@ -55,8 +56,22 @@ This project processes images from the MedMNIST dataset to classify medical imag
    ```bash
    git clone https://github.com/bigmouse8748/MedMNIST-Classification-Hao.git
 2. cd MedMNIST-Classification-Hao
-### Usage
+### Command Line Tools
 #### 1. Preview the data
- - cd data
- - python preview.py -h
+    cd data
+* Check the options of preview.py
+    python preview.py -h
 
+usage: preview.py [-h] [-d D] [-n N]
+
+options:
+  -h, --help  show this help message and exit
+  -d D        Select Data from {0: 'pathmnist', 1: 'chestmnist', 2: 'dermamnist', 3: 'octmnist', 4: 'pneumoniamnist',
+              5: 'retinamnist', 6: 'breastmnist', 7: 'bloodmnist', 8: 'tissuemnist', 9: 'organamnist', 10:
+              'organcmnist', 11: 'organsmnist'} for training. pathmnist (0) is default
+  -n N        Number of images per class to preview
+
+* Example: Perform preview of dataset, results are saved in data/Preview folder.
+    python preview.py -d 3 -n 10
+
+    

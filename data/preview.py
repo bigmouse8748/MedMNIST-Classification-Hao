@@ -1,4 +1,7 @@
+import sys
 import os
+project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+sys.path.insert(0, project_root)
 import random
 import matplotlib.pyplot as plt
 import torch
@@ -7,15 +10,21 @@ import medmnist
 from medmnist import INFO
 from torch.utils.data import DataLoader
 import argparse
+import utils.utils as ut
 
-def preview_data(data_flag, num_per_class=10):
+def preview_data(data_flag_id, num_per_class=10):
     """
     Preview MedMNIST training data.
     
     Args:
-        data_flag (str): The dataset name from MedMNIST (e.g., 'pathmnist', 'octmnist').
+        data_flag_id (int): The dataset name from MedMNIST (e.g., 'pathmnist', 'octmnist').
         num_per_class (int): Number of images per class to display in the class-wise plot.
     """
+    DATA_DICT = ut.get_data_dict()
+    if data_flag_id not in DATA_DICT.keys():
+        raise ValueError(f"Unsupported data, please use -h for help.")
+    else:
+        data_flag = DATA_DICT[data_flag_id]
     print(f"{data_flag} is going to be loaded.")
     preview_plot_folder = os.path.abspath(os.path.join(os.path.abspath(os.path.dirname(__file__)), "Preview"))
     os.makedirs(preview_plot_folder, exist_ok = True)
@@ -146,8 +155,7 @@ def preview_data(data_flag, num_per_class=10):
 # Example usage
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("-d", type=str, required=True, help="Dataset to load: 'pathmnist(default)', 'chestmnist', 'dermamnist', 'octmnist', 'pneumoniamnist', 'retinamnist', \
-                        'breastmnist', 'bloodmnist', 'tissuemnist', 'organamnist', 'organcmnist', 'organsmnist'")
-    parser.add_argument("-n", type=int, default=10, help="Number of images per class to preview")
+    parser.add_argument("-d", type= int, default = 0, help = f"Select Data from {ut.get_data_dict()} for training. pathmnist (0) is default")
+    parser.add_argument("-n", type=int, default = 10, help="Number of images per class to preview")
     args = parser.parse_args()
-    preview_data(data_flag=args.d, num_per_class=args.n)
+    preview_data(data_flag_id = args.d, num_per_class = args.n)
