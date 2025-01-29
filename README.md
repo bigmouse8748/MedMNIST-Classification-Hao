@@ -55,13 +55,16 @@ This project processes images from the MedMNIST dataset to classify medical imag
 1. Clone the repository:
    ```bash
    git clone https://github.com/bigmouse8748/MedMNIST-Classification-Hao.git
-2. cd MedMNIST-Classification-Hao
+2. Navigate to root folder
+   ```bash
+   cd MedMNIST-Classification-Hao
 ### Command Line Tools
 #### 1. Preview the data
+    ```bash
     cd data
 * Check the options of preview.py
     python preview.py -h
-
+    
 usage: preview.py [-h] [-d D] [-n N]
 
 options:
