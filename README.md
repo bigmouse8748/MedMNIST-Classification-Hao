@@ -35,4 +35,7 @@ This project processes images from the MedMNIST dataset to classify medical imag
 1. Clone the repository:
    ```bash
    git clone https://github.com/bigmouse8748/MedMNIST-Classification-Hao.git
-   cd MedMNIST-Classification
+   cd MedMNIST-Classification-Hao
+### Usage
+#### 1. Preview the data
+
