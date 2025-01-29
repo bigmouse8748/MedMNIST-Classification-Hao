@@ -1,0 +1,31 @@
+# Virtual Environment
+venv/
+.env
+
+# Python Cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Logs and Debug Files
+logs/
+*.log
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints/
+
+# Data Files
+*.csv
+*.h5
+*.json
+*.sqlite3
+
+# Ignore Large Files
+*.pth
+*.ipynb 
+
+#Ignore Image Files
+*.png
+
+
