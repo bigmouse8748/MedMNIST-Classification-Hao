@@ -29,7 +29,7 @@ logs/
 *.png
 
 #Ignore subfolders
-outputs/
+outputs/*
 !outputs
 !.gitkeep
 

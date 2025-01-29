@@ -32,13 +32,14 @@ class ModelTester:
 
         self.output_folder = os.path.abspath(os.path.join(os.path.abspath(os.path.dirname(__file__)), "../outputs"))
         self.test_result_folder = os.path.abspath(os.path.join(os.path.abspath(os.path.dirname(__file__)), "test_results"))
+        os.makedirs(self.test_result_folder, exist_ok=True)
         self.batch_size = 32
         self.threshold = threshold
 
         # Load dataset info to determine num_classes and task type
         info = INFO[self.data_flag]
         self.num_classes = len(info['label'])
-        print(self.num_classes)
+
         self.classes = info["label"]
         self.is_multi_label = info['task'] == "multi-label, binary-class"
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
