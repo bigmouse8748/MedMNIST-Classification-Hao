@@ -60,21 +60,20 @@ This project processes images from the MedMNIST dataset to classify medical imag
    cd MedMNIST-Classification-Hao
 ### Command Line Tools
 #### 1. Preview the data
-    ```bash
     cd data
-* Check the options of preview.py
+##### Check the options of preview.py
     python preview.py -h
     
-usage: preview.py [-h] [-d D] [-n N]
+    usage: preview.py [-h] [-d D] [-n N]
 
-options:
-  -h, --help  show this help message and exit
-  -d D        Select Data from {0: 'pathmnist', 1: 'chestmnist', 2: 'dermamnist', 3: 'octmnist', 4: 'pneumoniamnist',
-              5: 'retinamnist', 6: 'breastmnist', 7: 'bloodmnist', 8: 'tissuemnist', 9: 'organamnist', 10:
-              'organcmnist', 11: 'organsmnist'} for training. pathmnist (0) is default
-  -n N        Number of images per class to preview
+    options:
+    -h, --help  show this help message and exit
+    -d D        Select Data from {0: 'pathmnist', 1: 'chestmnist', 2: 'dermamnist', 3: 'octmnist', 4: 'pneumoniamnist',
+                5: 'retinamnist', 6: 'breastmnist', 7: 'bloodmnist', 8: 'tissuemnist', 9: 'organamnist', 10:
+                'organcmnist', 11: 'organsmnist'} for training. pathmnist (0) is default
+    -n N        Number of images per class to preview
 
-* Example: Perform preview of dataset, results are saved in data/Preview folder.
+##### Example: Perform preview of dataset, results are saved in data/Preview folder.
     python preview.py -d 3 -n 10
 
     
