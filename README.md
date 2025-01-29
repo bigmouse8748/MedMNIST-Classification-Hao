@@ -7,6 +7,7 @@ An end-to-end pipeline for classifying medical images from the MedMNIST dataset.
 ## Table of Contents
 - [About](#about)
 - [Setup Instructions](#setup-instructions)
+- [Code Structure](#code-structure)
 - [Usage](#usage)
 - [Results](#results)
 - [License](#license)
@@ -31,11 +32,18 @@ This project processes images from the MedMNIST dataset to classify medical imag
 - torch==2.5.1+cu124
 - torchvision==0.20.1+cu124
 - tqdm==4.67.1
+---
+### Code Structure
+* ['data/'](data/):
+    * ['preprocess.py'](data/preprocess.py): Load selected dataset and perfom preprocessing for training, validation, and test.
+    * ['preview.py'](data/preview.py): Preview selected dataset: Randomly select 100 images from all classes, or select specific number of images for each class.
 ### Installation
 1. Clone the repository:
    ```bash
    git clone https://github.com/bigmouse8748/MedMNIST-Classification-Hao.git
-   cd MedMNIST-Classification-Hao
+2. cd MedMNIST-Classification-Hao
 ### Usage
 #### 1. Preview the data
+ - cd data
+ - python preview.py -h
 
