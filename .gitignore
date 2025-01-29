@@ -35,4 +35,9 @@ outputs/*
 
 tests/test_results/*
 !tests/test_results/
+!.gitkeep
+
+data/Preview/*
+!data/Preview/
+!.gitkeep
 
