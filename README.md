@@ -52,12 +52,14 @@ This project processes images from the MedMNIST dataset to classify medical imag
 
 ## Installation
 1. Set up virtual env (optional)
+   ```bash
    python -m venv venv
    venv\Scripts\activate
 
 2. Install prerequisites
+   ```bash
    pip install -r requirements.txt
-   
+
 3. Clone the repository:
    ```bash
    git clone https://github.com/bigmouse8748/MedMNIST-Classification-Hao.git
