@@ -82,7 +82,7 @@ This project processes images from the MedMNIST dataset to classify medical imag
 ##### Check the options of train.py
     python train.py -h
 
-* usage: train.py [-h] -m M [-d D] [-l L] [-p P] [-s S] [-e E] [-b B]
+    usage: train.py [-h] -m M [-d D] [-l L] [-p P] [-s S] [-e E] [-b B]
 
     options:
     -h, --help  show this help message and exit
@@ -101,3 +101,30 @@ This project processes images from the MedMNIST dataset to classify medical imag
     python train.py -m 1 -d 2 -p y
 
 * Model and training logs are saved in ./outputs/{dataset}_{model_name}_{datetime}
+
+#### 3. Testing
+    cd tests
+##### check the options of test.py
+    python test.py -h
+
+    usage: test.py [-h] [-d D] [-t T] [-m M]
+
+    options:
+    -h, --help  show this help message and exit
+    -d D        Select Data from {0: 'pathmnist', 1: 'chestmnist', 2: 'dermamnist', 3: 'octmnist', 4: 'pneumoniamnist',
+                5: 'retinamnist', 6: 'breastmnist', 7: 'bloodmnist', 8: 'tissuemnist', 9: 'organamnist', 10:
+                'organcmnist', 11: 'organsmnist'} for training. pathmnist (0) is default
+    -t T        Set a threshold of probability for classification from 0 to 1
+    -m M        Choose the test mode. [0: One model test (need to provide the path of output folder), 1: All model test]
+
+##### Example: Perform single-model-single-data test (need to input the selected model folder in ./outputs folder).
+    python test.py -d 7 -m 0
+
+    Please input the output directory (such as ../outputs/chestmnist_inceptionresnet_20250128-234607):D:\Work\git_repo\MedMNIST-Classification-Hao\outputs\bloodmnist_inceptionresnet_20250129-001747
+    
+* Test result can be found in ./tests/test_results/bloodmnist_inceptionresnet_20250129-001747
+
+##### Example: Perform multi-model-single-data test.
+    python test.py -d 7 -m 1
+
+* Test result can be found in ./tests/test_results/Group_results
