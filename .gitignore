@@ -29,15 +29,15 @@ logs/
 *.png
 
 #Ignore subfolders
-/outputs/*
-!/outputs/
+outputs/*
+!outputs
 !.gitkeep
 
-/tests/test_results/*
-!/tests/test_results/
+tests/test_results/*
+!tests/test_results
 !.gitkeep
 
-/data/Preview/*
-!/data/Preview/
+data/Preview/*
+!data/Preview
 !.gitkeep
 
