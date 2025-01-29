@@ -30,7 +30,7 @@ logs/
 
 #Ignore subfolders
 outputs/*
-!outputs/
+
 
 tests/test_results/*
-!tests/test_results/
+
