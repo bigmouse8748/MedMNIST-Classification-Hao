@@ -31,6 +31,7 @@ logs/
 #Ignore subfolders
 outputs/*
 !outputs/
+!.gitkeep
 
 tests/test_results/*
 !tests/test_results/
