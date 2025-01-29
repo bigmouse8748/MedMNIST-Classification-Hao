@@ -37,6 +37,19 @@ This project processes images from the MedMNIST dataset to classify medical imag
 * ['data/'](data/):
     * ['preprocess.py'](data/preprocess.py): Load selected dataset and perfom preprocessing for training, validation, and test.
     * ['preview.py'](data/preview.py): Preview selected dataset: Randomly select 100 images from all classes, or select specific number of images for each class.
+
+* ['models/'](models/):
+    * ['inception_resnet.py'](models/inception_resnet.py): Load InceptionResNet model built from scratch
+    * ['stock_model.py'](models/stock_model.py): Load pretrained model provided by Pytorch
+    * ['train.py'](models/train.py): Perform training with several selectable arguments.
+
+* ['outputs/'](outputs/): Save training outputs in sub-folders. The   name of subfolder is created by the format of {dataset}_{model_name}_{created_time}. Training configurations, training logs, and model weights are stored in this folder.
+
+* ['tests/'](tests/):
+    * [test_results/](tests/test_results/): Saving the test result of each test event. Subfolder name with the format of {dataset}_{model_name}_{Datetime} saves the test result for "single model, single dataset" test pattern. Subfolder "Group_results" saves the test results for "multi model, single dataset" test pattern. 
+    * ['test.py'](tests/test.py): Perform test with several selectable arguments.
+* ['utils/'](utils/utils.py): helper functions.
+
 ### Installation
 1. Clone the repository:
    ```bash
