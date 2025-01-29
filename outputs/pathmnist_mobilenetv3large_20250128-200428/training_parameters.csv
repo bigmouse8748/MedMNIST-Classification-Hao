@@ -1,2 +1,0 @@
-model_name,lr_strategy,pretrained,scheduler_type,batch_size,epochs
-mobilenet_v3_large,default,True,None,32,5

@@ -1,2 +1,0 @@
-model_name,lr_strategy,pretrained,scheduler_type,batch_size,epochs
-inception_resnet,low,False,exponential,64,5

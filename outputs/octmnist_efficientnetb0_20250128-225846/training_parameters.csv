@@ -1,2 +1,0 @@
-model_name,lr_strategy,pretrained,scheduler_type,batch_size,epochs
-efficientnet_b0,high,True,exponential,64,5
