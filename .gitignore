@@ -28,4 +28,16 @@ logs/
 #Ignore Image Files
 *.png
 
+#Ignore subfolders
+/outputs/*
+!/outputs/
+!.gitkeep
+
+/tests/test_results/*
+!/tests/test_results/
+!.gitkeep
+
+/data/Preview/*
+!/data/Preview/
+!.gitkeep
 
