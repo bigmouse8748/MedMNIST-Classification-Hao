@@ -6,12 +6,11 @@ An end-to-end pipeline for classifying medical images from the MedMNIST dataset.
 
 ## Table of Contents
 - [About](#about)
-- [Setup Instructions](#setup-instructions)
+- [Prerequisites](#prerequisites)
 - [Code Structure](#code-structure)
 - [Installation](#installation)
 - [Command Line Tools](#command-line-tools)
-- [Results](#results)
-- [License](#license)
+- [License and Citation](#license)
 
 ---
 
@@ -23,7 +22,7 @@ This project processes images from the MedMNIST dataset to classify medical imag
 - Performance evaluation with metrics and visualizations.
 
 ---
-### Prerequisites
+## Prerequisites
 - Python 3.8+
 - matplotlib==3.10.0
 - medmnist==3.0.2
@@ -34,7 +33,7 @@ This project processes images from the MedMNIST dataset to classify medical imag
 - torchvision==0.20.1+cu124
 - tqdm==4.67.1
 ---
-### Code Structure
+## Code Structure
 * ['data/'](data/):
     * ['preprocess.py'](data/preprocess.py): Load selected dataset and perfom preprocessing for training, validation, and test.
     * ['preview.py'](data/preview.py): Preview selected dataset: Randomly select 100 images from all classes, or select specific number of images for each class.
@@ -51,18 +50,25 @@ This project processes images from the MedMNIST dataset to classify medical imag
     * ['test.py'](tests/test.py): Perform test with several selectable arguments.
 * ['utils/'](utils/utils.py): helper functions.
 
-### Installation
-1. Clone the repository:
+## Installation
+1. Set up virtual env (optional)
+   python -m venv venv
+   venv\Scripts\activate
+
+2. Install prerequisites
+   pip install -r requirements.txt
+   
+3. Clone the repository:
    ```bash
    git clone https://github.com/bigmouse8748/MedMNIST-Classification-Hao.git
 
-2. Navigate to root folder
+4. Navigate to root folder
    ```bash
    cd MedMNIST-Classification-Hao
-### Command Line Tools
-#### 1. Preview the data
+## Command Line Tools
+### 1. Preview the data
     cd data
-##### Check the options of preview.py
+#### Check the options of preview.py
     python preview.py -h
     
     usage: preview.py [-h] [-d D] [-n N]
@@ -74,12 +80,12 @@ This project processes images from the MedMNIST dataset to classify medical imag
                 'organcmnist', 11: 'organsmnist'} for training. pathmnist (0) is default
     -n N        Number of images per class to preview
 
-##### Example: Perform preview of dataset, results are saved in data/Preview folder.
+#### Example: Perform preview of dataset, results are saved in data/Preview folder.
     python preview.py -d 3 -n 10
 
-#### 2. Training
+### 2. Training
     cd models
-##### Check the options of train.py
+#### Check the options of train.py
     python train.py -h
 
     usage: train.py [-h] -m M [-d D] [-l L] [-p P] [-s S] [-e E] [-b B]
@@ -97,14 +103,14 @@ This project processes images from the MedMNIST dataset to classify medical imag
     -e E        Set the number of epochs (default = 30).
     -b B        Batchsize from [8, 16, 32, 64, 128]
 
-##### Example: Perform training on dermamnist dataset with resnet18 pretrained model.
+#### Example: Perform training on dermamnist dataset with resnet18 pretrained model.
     python train.py -m 1 -d 2 -p y
 
 * Model and training logs are saved in ./outputs/{dataset}_{model_name}_{datetime}
 
-#### 3. Testing
+### 3. Testing
     cd tests
-##### check the options of test.py
+#### check the options of test.py
     python test.py -h
 
     usage: test.py [-h] [-d D] [-t T] [-m M]
@@ -117,14 +123,26 @@ This project processes images from the MedMNIST dataset to classify medical imag
     -t T        Set a threshold of probability for classification from 0 to 1
     -m M        Choose the test mode. [0: One model test (need to provide the path of output folder), 1: All model test]
 
-##### Example: Perform single-model-single-data test (need to input the selected model folder in ./outputs folder).
+#### Example: Perform single-model-single-data test (need to input the selected model folder in ./outputs folder).
     python test.py -d 7 -m 0
 
     Please input the output directory (such as ../outputs/chestmnist_inceptionresnet_20250128-234607):D:\Work\git_repo\MedMNIST-Classification-Hao\outputs\bloodmnist_inceptionresnet_20250129-001747
     
 * Test result can be found in ./tests/test_results/bloodmnist_inceptionresnet_20250129-001747
 
-##### Example: Perform multi-model-single-data test.
+#### Example: Perform multi-model-single-data test.
     python test.py -d 7 -m 1
 
 * Test result can be found in ./tests/test_results/Group_results
+
+
+## License and Citation
+
+The MedMNIST dataset is licensed under *Creative Commons Attribution 4.0 International* ([CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)), except DermaMNIST under 
+*Creative Commons Attribution-NonCommercial 4.0 International* ([CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)). The code is under [Apache-2.0 License](./LICENSE).
+
+If you find this project useful in your research, please cite the following papers:
+
+    Jiancheng Yang, Rui Shi, Donglai Wei, Zequan Liu, Lin Zhao, Bilian Ke, Hanspeter Pfister, Bingbing Ni. Yang, Jiancheng, et al. "MedMNIST v2-A large-scale lightweight benchmark for 2D and 3D biomedical image classification." Scientific Data, 2023.
+
+    Jiancheng Yang, Rui Shi, Bingbing Ni. "MedMNIST Classification Decathlon: A Lightweight AutoML Benchmark for Medical Image Analysis". IEEE 18th International Symposium on Biomedical Imaging (ISBI), 2021.
