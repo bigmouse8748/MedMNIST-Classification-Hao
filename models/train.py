@@ -216,7 +216,7 @@ if __name__ == "__main__":
     parser.add_argument("-l", type= int, default= 0, help = f"Choose the start learning rate from {ut.get_lr_strategy()}, or use a float number.")
     parser.add_argument("-p", type = str, default = 'y', help = f"Choose if use pretrain weights: {ut.get_if_pretrain()}")
     parser.add_argument('-s', type = int, default = 0, help = f"Choose learning rate schedular from {ut.get_lr_schedular()}")
-    parser.add_argument('-e', type = int, default = 30, help = "Set the number of epochs.")
+    parser.add_argument('-e', type = int, default = 30, help = "Set the number of epochs (default = 30).")
     parser.add_argument('-b', type = int, default = 32, help = "Batchsize from [8, 16, 32, 64, 128]")
     args = parser.parse_args()
 

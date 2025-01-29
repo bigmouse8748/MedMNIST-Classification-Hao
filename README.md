@@ -55,6 +55,7 @@ This project processes images from the MedMNIST dataset to classify medical imag
 1. Clone the repository:
    ```bash
    git clone https://github.com/bigmouse8748/MedMNIST-Classification-Hao.git
+
 2. Navigate to root folder
    ```bash
    cd MedMNIST-Classification-Hao
@@ -62,18 +63,41 @@ This project processes images from the MedMNIST dataset to classify medical imag
 #### 1. Preview the data
     cd data
 ##### Check the options of preview.py
-        python preview.py -h
-        
-        usage: preview.py [-h] [-d D] [-n N]
+    python preview.py -h
+    
+    usage: preview.py [-h] [-d D] [-n N]
 
-        options:
-        -h, --help  show this help message and exit
-        -d D        Select Data from {0: 'pathmnist', 1: 'chestmnist', 2: 'dermamnist', 3: 'octmnist', 4: 'pneumoniamnist',
-                    5: 'retinamnist', 6: 'breastmnist', 7: 'bloodmnist', 8: 'tissuemnist', 9: 'organamnist', 10:
-                    'organcmnist', 11: 'organsmnist'} for training. pathmnist (0) is default
-        -n N        Number of images per class to preview
+    options:
+    -h, --help  show this help message and exit
+    -d D        Select Data from {0: 'pathmnist', 1: 'chestmnist', 2: 'dermamnist', 3: 'octmnist', 4: 'pneumoniamnist',
+                5: 'retinamnist', 6: 'breastmnist', 7: 'bloodmnist', 8: 'tissuemnist', 9: 'organamnist', 10:
+                'organcmnist', 11: 'organsmnist'} for training. pathmnist (0) is default
+    -n N        Number of images per class to preview
 
 ##### Example: Perform preview of dataset, results are saved in data/Preview folder.
-        python preview.py -d 3 -n 10
+    python preview.py -d 3 -n 10
 
-    
+#### 2. Training
+    cd models
+##### Check the options of train.py
+    python train.py -h
+
+    usage: train.py [-h] -m M [-d D] [-l L] [-p P] [-s S] [-e E] [-b B]
+
+    options:
+    -h, --help  show this help message and exit
+    -m M        Select Model from {0: 'resnet50', 1: 'resnet18', 2: 'efficientnet_b0', 3: 'mobilenet_v3_large', 4:
+                'inception_resnet'} for training
+    -d D        Select Data from {0: 'pathmnist', 1: 'chestmnist', 2: 'dermamnist', 3: 'octmnist', 4: 'pneumoniamnist',
+                5: 'retinamnist', 6: 'breastmnist', 7: 'bloodmnist', 8: 'tissuemnist', 9: 'organamnist', 10:
+                'organcmnist', 11: 'organsmnist'} for training. pathmnist (0) is default
+    -l L        Choose the start learning rate from {0: 0.001, 1: 0.0001, 2: 0.01}, or use a float number.
+    -p P        Choose if use pretrain weights: {'y': True, 'n': False}
+    -s S        Choose learning rate schedular from {0: None, 1: 'exponential', 2: 'ratio_decrease'}
+    -e E        Set the number of epochs (default = 30).
+    -b B        Batchsize from [8, 16, 32, 64, 128]
+
+##### Example: Perform training on dermamnist dataset with resnet18 pretrained model.
+    python train.py -m 1 -d 2 -p y
+
+    * Model and training logs are saved in ./outputs/{dataset}_{model_name}_{datetime}
