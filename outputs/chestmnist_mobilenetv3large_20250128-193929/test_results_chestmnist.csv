@@ -1,0 +1,2 @@
+hamming_loss,exact_match_ratio,model_name,model_time,folder
+0.0525692379211748,0.5317166674096198,mobilenet_v3_large_best_model.pth,20250128-193929,D:\Work\git_repo\MedMNIST-Classification-Hao\outputs\chestmnist_mobilenetv3large_20250128-193929

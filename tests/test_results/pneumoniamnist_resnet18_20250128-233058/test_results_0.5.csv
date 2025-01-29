@@ -1,0 +1,2 @@
+hamming_loss,exact_match_ratio,accuracy,precision_macro,recall_macro,f1_macro,threshold,model_name,model_time,folder
+0.11057692307692307,0.8894230769230769,0.8894230769230769,0.9027367268746579,0.8628205128205129,0.8766215344938749,0.5,resnet18_best_model.pth,20250128-233058,D:\Work\git_repo\MedMNIST-Classification-Hao\outputs\pneumoniamnist_resnet18_20250128-233058

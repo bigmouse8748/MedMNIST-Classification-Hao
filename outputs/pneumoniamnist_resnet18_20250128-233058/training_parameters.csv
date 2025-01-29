@@ -1,0 +1,2 @@
+model_name,lr_strategy,pretrained,scheduler_type,batch_size,epochs
+resnet18,low,True,exponential,64,5

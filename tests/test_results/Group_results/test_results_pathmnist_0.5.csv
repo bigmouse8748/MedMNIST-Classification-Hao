@@ -1,0 +1,2 @@
+hamming_loss,exact_match_ratio,accuracy,precision_macro,recall_macro,f1_macro,threshold,model_name,model_time,folder
+0.18231197771587743,0.8176880222841225,0.8176880222841225,0.7737649929367163,0.7783537829300557,0.7711331290077786,0.5,resnet18_best_model.pth,20250128-190417,D:\Work\git_repo\MedMNIST-Classification-Hao\outputs\pathmnist_resnet18_20250128-190417
