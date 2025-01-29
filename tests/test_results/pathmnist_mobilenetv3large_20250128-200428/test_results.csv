@@ -1,2 +1,0 @@
-accuracy,precision_macro,recall_macro,f1_macro,model_name,model_time,folder
-0.8448467966573816,0.804684007734976,0.801893130530196,0.7919837624645442,mobilenet_v3_large_best_model.pth,20250128-200428,D:\Work\git_repo\MedMNIST-Classification-Hao\outputs\pathmnist_mobilenetv3large_20250128-200428
