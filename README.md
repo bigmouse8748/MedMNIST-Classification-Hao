@@ -82,7 +82,7 @@ This project processes images from the MedMNIST dataset to classify medical imag
 ##### Check the options of train.py
     python train.py -h
 
-    usage: train.py [-h] -m M [-d D] [-l L] [-p P] [-s S] [-e E] [-b B]
+* usage: train.py [-h] -m M [-d D] [-l L] [-p P] [-s S] [-e E] [-b B]
 
     options:
     -h, --help  show this help message and exit
@@ -100,4 +100,4 @@ This project processes images from the MedMNIST dataset to classify medical imag
 ##### Example: Perform training on dermamnist dataset with resnet18 pretrained model.
     python train.py -m 1 -d 2 -p y
 
-    * Model and training logs are saved in ./outputs/{dataset}_{model_name}_{datetime}
+* Model and training logs are saved in ./outputs/{dataset}_{model_name}_{datetime}
